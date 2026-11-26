@@ -1,0 +1,15 @@
+
+{
+  "name": "todo-list-xp-web",
+  "version": "1.0.0",
+  "description": "To-Do List application using XP and TDD",
+  "main": "app.js",
+  "scripts": {
+    "start": "live-server",
+    "test": "jest --runInBand"
+  },
+  "devDependencies": {
+    "jest": "^30.0.0",
+    "live-server": "^1.2.2"
+  }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow | To-Do List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#"><span class="brand-mark">✓</span> taskflow</a>
+      <span class="top-note">MAKE TODAY COUNT</span>
+    </header>
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">YOUR PERSONAL WORKSPACE</p>
+        <h1>Get things <span>done.</span></h1>
+        <p class="subtitle">A little progress each day adds up to big results.</p>
+      </div>
+      <div class="date-card">
+        <span class="date-label">TODAY</span>
+        <strong id="today-date">—</strong>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Task statistics">
+      <article class="stat-card"><span class="stat-icon purple">▤</span><div><strong id="total-count">0</strong><span>Total tasks</span></div></article>
+      <article class="stat-card"><span class="stat-icon green">✓</span><div><strong id="completed-count">0</strong><span>Completed</span></div></article>
+      <article class="stat-card"><span class="stat-icon orange">◷</span><div><strong id="pending-count">0</strong><span>Pending</span></div></article>
+    </section>
+
+    <section class="workspace">
+      <div class="section-heading">
+        <div><p class="eyebrow">STAY ORGANIZED</p><h2>My tasks</h2></div>
+        <span class="task-counter" id="task-counter">0 tasks</span>
+      </div>
+
+      <form id="task-form" class="add-form">
+        <label class="sr-only" for="task-title">Task title</label>
+        <input id="task-title" type="text" placeholder="What do you need to do?" maxlength="100" autocomplete="off">
+        <label class="sr-only" for="task-priority">Priority</label>
+        <select id="task-priority">
+          <option value="High">High priority</option>
+          <option value="Medium" selected>Medium priority</option>
+          <option value="Low">Low priority</option>
+        </select>
+        <button class="primary-btn" type="submit"><span>＋</span> Add task</button>
+      </form>
+
+      <div class="toolbar">
+        <div class="filters" role="group" aria-label="Filter tasks">
+          <button class="filter-btn active" data-filter="All">All</button>
+          <button class="filter-btn" data-filter="Pending">Pending</button>
+          <button class="filter-btn" data-filter="Completed">Completed</button>
+        </div>
+        <label class="search-box"><span>⌕</span><input id="search-input" type="search" placeholder="Search tasks..."></label>
+      </div>
+
+      <div id="task-list" class="task-list" aria-live="polite"></div>
+      <p id="empty-state" class="empty-state">No tasks here yet. Add your first task above ✨</p>
+      <div class="footer-note"><span class="live-dot"></span> Your tasks are saved in this browser</div>
+    </section>
+    <footer>Built with focus · Powered by small steps</footer>
+  </main>
+  <script src="todo.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
